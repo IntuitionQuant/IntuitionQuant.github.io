@@ -1,0 +1,100 @@
+/* Ping Liu, academic website. Plain CSS, no build step. */
+:root {
+  --ink: #1f2430;
+  --navy: #17305a;
+  --slate: #5f6773;
+  --rule: #d9dde3;
+  --band: #f4f6f8;
+  --paper: #ffffff;
+  --measure: 70ch;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Source Serif 4", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  font-size: 18px;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+main { flex: 1 0 auto; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: var(--navy); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible { outline: 2px solid var(--navy); outline-offset: 3px; }
+p { margin: 0 0 1em; max-width: var(--measure); }
+
+.wrap { max-width: 900px; margin: 0 auto; padding-inline: 24px; }
+
+/* Navigation */
+.topbar { border-bottom: 1px solid var(--rule); }
+.nav { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; flex-wrap: wrap; padding-block: 22px 18px; }
+.brand { font-size: 22px; font-weight: 600; color: var(--ink); text-decoration: none; letter-spacing: .01em; }
+.brand:hover { text-decoration: none; color: var(--navy); }
+.links { display: flex; gap: 28px; margin: 0; padding: 0; list-style: none; }
+.links a { font-size: 17px; color: var(--slate); text-decoration: none; padding-bottom: 4px; border-bottom: 2px solid transparent; }
+.links a:hover { color: var(--navy); }
+.links a[aria-current="page"] { color: var(--navy); border-bottom-color: var(--navy); }
+
+/* Home */
+.hero { padding-block: 64px 80px; }
+.hero-grid { display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 56px; align-items: start; }
+.portrait img { width: 100%; border-radius: 4px; }
+.hero h1 { font-size: clamp(40px, 6vw, 64px); font-weight: 600; line-height: 1.05; margin: 8px 0 18px; letter-spacing: -.01em; }
+.position { font-size: 22px; margin: 0 0 4px; }
+.affiliation { font-size: 19px; color: var(--slate); margin: 0 0 32px; }
+.keywords { margin: 0 0 36px; }
+.keywords dt { font-size: 15px; color: var(--slate); margin-bottom: 4px; }
+.keywords dd { margin: 0; font-size: 19px; line-height: 1.5; max-width: 34ch; }
+.button {
+  display: inline-block; background: var(--navy); color: #fff; text-decoration: none;
+  padding: 11px 20px; border-radius: 3px; font-size: 17px;
+}
+.button:hover { background: #10223f; text-decoration: none; }
+
+/* Content pages */
+.page { padding-block: 48px 72px; }
+.page h1 { font-size: 40px; font-weight: 600; line-height: 1.1; margin: 0 0 20px; }
+.lead { font-size: 20px; line-height: 1.55; }
+.doc-link { margin: 18px 0 0; }
+h2 { font-size: 26px; font-weight: 600; line-height: 1.2; margin: 56px 0 24px; padding-bottom: 8px; border-bottom: 1px solid var(--rule); }
+h3 { font-size: 20px; font-weight: 600; margin: 32px 0 10px; }
+
+.papers { list-style: none; margin: 0; padding: 0; }
+.paper { margin-bottom: 36px; }
+.paper .title { font-size: 21px; font-weight: 600; line-height: 1.3; margin: 0 0 4px; max-width: var(--measure); }
+.paper .title a { text-decoration-thickness: 1px; }
+.paper .request { font-weight: 400; color: var(--slate); font-size: 17px; white-space: nowrap; }
+.paper .authors { color: var(--slate); margin: 0 0 4px; }
+.paper .status { margin: 0 0 4px; }
+.paper .prior { color: var(--slate); font-size: 16px; margin: 0 0 4px; }
+.paper .venues { color: var(--slate); font-size: 16px; margin: 0; }
+.paper .abstract { margin: 12px 0 0; font-size: 17px; line-height: 1.6; }
+
+.courses { list-style: none; margin: 0; padding: 0; }
+.courses li { margin-bottom: 14px; max-width: var(--measure); }
+.courses .course { display: block; }
+.courses .about { display: block; color: var(--slate); font-size: 16px; }
+
+.classroom { margin: 64px 0 0; }
+.classroom img { border-radius: 4px; }
+
+/* Footer */
+.footer { background: var(--band); border-top: 1px solid var(--rule); padding-block: 28px 36px; color: var(--slate); font-size: 15px; line-height: 1.6; }
+.footer p { margin: 0; max-width: none; }
+.footer a { color: var(--slate); }
+
+@media (max-width: 720px) {
+  body { font-size: 17px; }
+  .hero { padding-block: 40px 56px; }
+  .hero-grid { grid-template-columns: 1fr; gap: 32px; }
+  .portrait { max-width: 240px; }
+  .page h1 { font-size: 34px; }
+  .links { gap: 20px; }
+}
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
