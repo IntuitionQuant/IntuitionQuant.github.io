@@ -57,6 +57,13 @@ p { margin: 0 0 1em; max-width: var(--measure); }
 }
 .button:hover { background: #10223f; text-decoration: none; }
 
+/* Home: research highlights */
+.highlights { border-top: 1px solid var(--rule); padding-block: 48px 72px; }
+.highlights h2 { margin-top: 0; }
+.highlights .paper { margin-bottom: 30px; }
+.paper .summary { margin: 8px 0 0; font-size: 17px; line-height: 1.6; max-width: var(--measure); }
+.more { margin: 8px 0 0; font-size: 17px; }
+
 /* Content pages */
 .page { padding-block: 48px 72px; }
 .page h1 { font-size: 40px; font-weight: 600; line-height: 1.1; margin: 0 0 20px; }
